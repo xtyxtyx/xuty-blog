@@ -9,6 +9,7 @@ html(lang='en')
         link(rel="stylesheet", href="/bulma.min.css")
 
         script(src='/fengari-web.js')
+        script(src="https://identity-js.netlify.com/v1/netlify-identity-widget.js")
         script.
             var _hmt = _hmt || [];
             (function() {
@@ -108,3 +109,15 @@ html(lang='en')
             --     nav_burger.classList:toggle'is-active'
             --     nav_menu.classList:toggle'is-active'
             -- end
+
+        //- See: https://www.netlifycms.org/docs/add-to-your-site/
+        script.
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", function(user) {
+                    if (!user) {
+                            window.netlifyIdentity.on("login", function() {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+            }
