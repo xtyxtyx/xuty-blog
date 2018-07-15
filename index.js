@@ -6,6 +6,7 @@ const permalinks  = require('metalsmith-permalinks');
 const debug       = require('metalsmith-debug');
 const collections = require('metalsmith-collections');
 const drafts      = require('metalsmith-drafts');
+const conv_time   = require('./plugin/conv_time');
 
 Metalsmith(__dirname)
 
@@ -24,6 +25,8 @@ Metalsmith(__dirname)
 
   // draft: true
   .use(drafts())
+
+  .use(conv_time())
 
   // markdown -> html
   .use(markdown())
