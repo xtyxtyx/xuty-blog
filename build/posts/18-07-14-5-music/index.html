@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="description" content="It's about saying »Hello« to the World."><link rel="stylesheet" href="/bulma.min.css"><script src="/fengari-web.js"></script><script>var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?8c6a23a9c58154cadd53d966f158f2f7";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+</script><title>加载网易云外链播放器</title><style>.blog-item {
+    padding: 16px 0px;
+}
+
+.xuty-main{
+    padding: 24px 16px;
+}
+
+.xuty-footer {
+    padding: 24px;
+    font-size: 0.8rem;
+}
+
+p {
+    line-height: 2;
+}</style></head><body><script type="application/lua">print[[
+               __          /\      ___.   .__                 
+___  _____ ___/  |_ ___.__.)/_____ \_ |__ |  |   ____   ____  
+\  \/  /  |  \   __<   |  |/  ___/  | __ \|  |  /  _ \ / ___\ 
+ >    <|  |  /|  |  \___  |\___ \   | \_\ \  |_(  <_> ) /_/  >
+/__/\_ \____/ |__|  / ____/____  >  |___  /____/\____/\___  / 
+      \/            \/         \/       \/           /_____/  
+]]
+
+</script><div class="navbar has-shadow"><div class="container"><div class="navbar-brand"><a class="navbar-item" href="/"><div><h1 class="title">xuty的博客 ﾉ(=ﾟωﾟ)ﾉ</h1><h1 class="subtitle">xuty's blog</h1></div></a></div></div></div><div class="xuty-main"><div class="columns"><div class="column is-four-fifths"><div class="container is-fluid"><div class="breadcrumb blog-item"><ul><li><a href="/">主页</a></li><li><a href="/posts/18-07-14-5-music">加载网易云外链播放器</a></li></ul></div></div><div class="container is-fluid"><div class="content"><p>来点音乐吧</p>
+<div style="margin-left: -10px; margin-top: -10px">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=290 height=86 src="//music.163.com/outchain/player?type=2&id=29850631&auto=0&height=66"></iframe>
+</div>
+
+<p>来自じん的《夏令时记录》，<a href="https://zh.moegirl.org/%E5%A4%8F%E4%BB%A4%E6%97%B6%E8%AE%B0%E5%BD%95">详见</a></p>
+<h4 id="-">加载方法</h4>
+<p>在<a href="http://music.163.com/#">网易云音乐网页版</a>随便点开一首歌，就能够看到<u>生成外链播放器</u>的链接，使用这个就可以啦</p>
+<h4 id="-">移动端注意事项</h4>
+<p>播放器宽度要设置得稍微短一点，不要超过默认的<code>310px</code>，这样设置多数移动端设备都可以显示完全。</p>
+<h4 id="-">网页对齐</h4>
+<p>网易云播放器横向和纵向会有<code>10px</code>的偏移，加上个<code>div</code>修正就好啦</p>
+<pre><code class="lang-html">&lt;div style=&quot;margin-left: -10px; margin-top: -10px&quot;&gt;
+    &lt;!-- iframe播放器 --&gt;
+&lt;/div&gt;
+</code></pre>
+</div></div></div></div></div><div class="xuty-footer"><div class="content has-text-centered"><p class="has-text-grey-lighter">Built: Sat Jul 14 2018 22:42:44 GMT+0800 (CST)</p></div></div><script type="application/lua">local js = require'js'
+local window = js.global
+local document = window.document
+
+-- local nav_burger = document:getElementById'navBurger'
+-- local nav_menu = document:getElementById'navMenu'
+-- nav_burger.onclick = function ()
+--     nav_burger.classList:toggle'is-active'
+--     nav_menu.classList:toggle'is-active'
+-- end</script></body></html>

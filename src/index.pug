@@ -1,0 +1,110 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        meta(name='description', content= description)
+
+        link(rel="stylesheet", href="/bulma.min.css")
+
+        script(src='/fengari-web.js')
+        script.
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?8c6a23a9c58154cadd53d966f158f2f7";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+
+        title= title
+
+        style.
+            .blog-item {
+                padding: 16px 0px;
+            }
+
+            .xuty-main{
+                padding: 24px;
+            }
+
+            .xuty-footer {
+                padding: 24px;
+                font-size: 0.8rem;
+            }
+    body
+
+        //- Fengari Debug Info
+        script(type='application/lua').
+            print[[
+                           __          /\      ___.   .__                 
+            ___  _____ ___/  |_ ___.__.)/_____ \_ |__ |  |   ____   ____  
+            \  \/  /  |  \   __<   |  |/  ___/  | __ \|  |  /  _ \ / ___\ 
+            >    <|  |  /|  |  \___  |\___ \   | \_\ \  |_(  <_> ) /_/  >
+            /__/\_ \____/ |__|  / ____/____  >  |___  /____/\____/\___  / 
+                  \/            \/         \/       \/           /_____/  
+            ]]
+
+
+        //- Navbar
+        div(class='navbar has-shadow')
+            .container
+                .navbar-brand
+                    a(class='navbar-item', href="#")
+                        div
+                            h1(class='title')= meta_title
+                            h1(class='subtitle')= meta_subtitle
+
+                //-     a(id='navBurger', class='navbar-burger', onclick='burger_click(this)')
+                //-         span
+                //-         span
+                //-         span
+                
+                //- .navbar-menu(id='navMenu')
+                //-     .navbar-end
+                //-         a(class='navbar-item', href='#')
+                //-             span 关于...
+        
+
+        //- Main Section
+        .xuty-main
+
+            .columns
+                div(class='column is-four-fifths')
+
+                    div(class='container is-fluid')
+                        .breadcrumb(class='blog-item')
+                            ul
+                                li
+                                    a(href="#") xuty的博客
+                                li
+                                    a(href="#") 主页
+            
+                    //- Articles
+                    div(class='container is-fluid')
+                        each post in collections.posts
+                            div(class='blog-item')
+                                a(href= '/' + post.path)
+                                    p(class='title is-4') #{post.title}
+                                    p(class='subtitle is-6') #{post.date.toDateString()}
+
+
+        //- Footer
+        div(class='xuty-footer')
+            div(class='content has-text-centered')
+                p(class='has-text-grey-lighter') Built: #{new Date()}
+
+
+        //- Fengari Main Script
+        script(type='application/lua').
+            local js = require'js'
+            local window = js.global
+            local document = window.document
+            
+            -- local nav_burger = document:getElementById'navBurger'
+            -- local nav_menu = document:getElementById'navMenu'
+            -- nav_burger.onclick = function ()
+            --     nav_burger.classList:toggle'is-active'
+            --     nav_menu.classList:toggle'is-active'
+            -- end
