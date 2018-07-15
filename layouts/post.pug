@@ -37,6 +37,10 @@ html(lang='en')
             p {
                 line-height: 2;
             }
+
+            .is-margin-bottom-16 {
+                margin-bottom: 16px;
+            }
     body
 
         //- Fengari Debug Info
@@ -77,14 +81,14 @@ html(lang='en')
             .columns
                 div(class='column is-four-fifths')
 
-                    div(class='container is-fluid')
+                    div(class='container is-fluid is-margin-bottom-16')
                         .breadcrumb(class='blog-item')
                             ul
                                 li
                                     a(href="/") 主页
                                 li
                                     a(href= '/' + path) #{title}
-            
+
                     //- Articles
                     div(class='container is-fluid')
                         .content !{contents}
