@@ -1,17 +1,18 @@
 ---
-title: 这博客的脚本语言是Lua？！：Fengari项目简介
-date: 2018-07-14T10:03:52.420Z
+title: 用Lua写网页脚本：Fengari项目简介
 layout: post.pug
+date: 2018-07-14T10:03:52.420Z
 draft: false
 autotoc: true
 ---
 
 是的。
 
-这个博客的脚本语言是Lua。
+这个博客的网页脚本语言就是Lua。
 
-随处可见`type="application/lua"`。
+可以看到`type="application/lua"`。
 
+示例：
 <pre>
 <div id="luaCode">
 local js = require'js'
@@ -43,3 +44,5 @@ window.onload = function()
     end
 end
 </script>
+
+*To be continue...*
