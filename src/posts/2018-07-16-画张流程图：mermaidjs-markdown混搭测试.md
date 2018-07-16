@@ -19,12 +19,14 @@ graph TB
   permalinks
   pug
   layouts
-
+  
+  src --> drafts
   drafts --> conv_time
   conv_time --> markdown
   markdown --> autotoc
   autotoc --> collections
-  collections --> collections
+  collections --> permalinks
   permalinks --> pug
   pug --> layouts
+  layouts --> build
 ```
