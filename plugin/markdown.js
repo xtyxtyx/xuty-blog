@@ -8,6 +8,7 @@ const basename = require('path').basename;
 const debug = require('debug')('metalsmith-markdown');
 const dirname = require('path').dirname;
 const extname = require('path').extname;
+const hljs = require('highlight.js');
 const mdit = require('markdown-it');
 const mdit_anchor = require('markdown-it-anchor');
 /**
@@ -26,6 +27,23 @@ module.exports = plugin;
 
 function plugin(options){
     options = options || {};
+
+    options.highlight = function (str, lang) {
+        if (!lang) return;
+
+        if (lang === 'graph') {
+            return '<div class="mermaid">' + str + '</div>';
+        }
+
+        if (hljs.getLanguage(lang)) {
+            try {
+                return hljs.highlight(lang, str).value;
+            } catch (__) {}
+        }
+
+        return ''; // use external default escaping
+    }
+
     const md = mdit(options)
         .use(mdit_anchor, {});
 

@@ -8,6 +8,12 @@ html(lang='en')
 
         link(rel="stylesheet", href="/bulma.min.css")
 
+        //- See: https://mermaidjs.github.io/usage.html
+        //- link(rel="stylesheet", href="/mermaid.min.css")
+
+        //- See: https://highlightjs.org/download/
+        link(rel="stylesheet", href="/highlight.min.css")
+
         script(src='/fengari-web.js')
         script.
             var _hmt = _hmt || [];
@@ -61,6 +67,10 @@ html(lang='en')
 
             .card-content li {
                 font-weight: normal;
+            }
+
+            code {
+                color: #3273dc;
             }
     body
 
@@ -148,3 +158,8 @@ html(lang='en')
             --     nav_burger.classList:toggle'is-active'
             --     nav_menu.classList:toggle'is-active'
             -- end
+
+        //- See: https://mermaidjs.github.io/usage.html
+        script(src='/mermaid.min.js')
+        script.
+            mermaid.initialize({startOnLoad:true});
