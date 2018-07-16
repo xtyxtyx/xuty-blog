@@ -1,5 +1,4 @@
 const Metalsmith  = require('metalsmith');
-const markdown    = require('metalsmith-markdown');
 const layouts     = require('metalsmith-layouts');
 const pug         = require('metalsmith-in-place');
 const permalinks  = require('metalsmith-permalinks');
@@ -8,6 +7,7 @@ const collections = require('metalsmith-collections');
 const autotoc     = require('metalsmith-autotoc');
 const drafts      = require('metalsmith-drafts');
 const conv_time   = require('./plugin/conv_time');
+const markdown    = require('./plugin/markdown');
 
 Metalsmith(__dirname)
 
@@ -31,10 +31,14 @@ Metalsmith(__dirname)
   .use(conv_time())
 
   // markdown -> html
-  .use(markdown())
+  .use(markdown({
+    html: true,
+    linkify: true,
+    typographer: true
+  }))
 
   // gen toc for html
-  .use(autotoc({selector: 'h2, h3, h4'}))
+  .use(autotoc({ selector: 'h2, h3, h4' }))
   
   // '.md': {} -> '.md': {collections: 'posts'}
   .use(collections({
