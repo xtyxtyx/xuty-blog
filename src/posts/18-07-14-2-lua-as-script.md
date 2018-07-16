@@ -3,6 +3,7 @@ title: 这博客的脚本语言是Lua？！：Fengari项目简介
 date: 2018-07-14T10:03:52.420Z
 layout: post.pug
 draft: false
+autotoc: true
 ---
 
 是的。

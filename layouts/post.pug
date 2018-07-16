@@ -41,6 +41,27 @@ html(lang='en')
             .is-margin-bottom-16 {
                 margin-bottom: 16px;
             }
+
+            li ul {
+                margin-left: 10px;
+            }
+
+            .card li {
+                margin: 10px 0px;
+            }
+
+            .card-content {
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .card-content>ul>li {
+                font-weight: bold;
+            }
+
+            .card-content li {
+                font-weight: normal;
+            }
     body
 
         //- Fengari Debug Info
@@ -78,20 +99,35 @@ html(lang='en')
         //- Main Section
         .xuty-main
 
-            .columns
-                div(class='column is-four-fifths')
+            .container(class='is-fluid is-margin-bottom-16')
+                .breadcrumb(class='blog-item')
+                    ul
+                        li
+                            a(href="/") 主页
+                        li
+                            a(href= '/' + path) #{title}
 
-                    div(class='container is-fluid is-margin-bottom-16')
-                        .breadcrumb(class='blog-item')
-                            ul
-                                li
-                                    a(href="/") 主页
-                                li
-                                    a(href= '/' + path) #{title}
-
+            .container(class='is-fluid')
+                .columns
                     //- Articles
-                    div(class='container is-fluid')
+                    .column(class='is-four-fifths')
                         .content !{contents}
+
+                    //- TOC
+                    //- See: https://pugjs.org/language/mixins.html
+                    mixin gen_toc(toc)
+                        ul
+                            each item in toc
+                                li
+                                    a(href= `#${item.id}`) #{item.text}
+                                        if item.children.length !== 0
+                                            +gen_toc(item.children)
+
+                    if toc && toc.length !== 0
+                        .column(class='is-hidden-mobile')
+                            .card
+                                .card-content
+                                    +gen_toc(toc)
 
 
         //- Footer

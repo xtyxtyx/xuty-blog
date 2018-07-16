@@ -5,6 +5,7 @@ const pug         = require('metalsmith-in-place');
 const permalinks  = require('metalsmith-permalinks');
 const debug       = require('metalsmith-debug');
 const collections = require('metalsmith-collections');
+const autotoc     = require('metalsmith-autotoc');
 const drafts      = require('metalsmith-drafts');
 const conv_time   = require('./plugin/conv_time');
 
@@ -26,11 +27,15 @@ Metalsmith(__dirname)
   // draft: true
   .use(drafts())
 
+  // conv string -> Date() obj
   .use(conv_time())
 
   // markdown -> html
   .use(markdown())
 
+  // gen toc for html
+  .use(autotoc({selector: 'h2, h3, h4'}))
+  
   // '.md': {} -> '.md': {collections: 'posts'}
   .use(collections({
     posts: {
