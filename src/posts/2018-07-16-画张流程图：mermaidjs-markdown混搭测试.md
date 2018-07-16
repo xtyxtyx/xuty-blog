@@ -7,7 +7,7 @@ autodoc: true
 ---
 > [mermaidjs文档](https://mermaidjs.github.io/flowchart.html)
 
-```graph
+```graph-center
 graph TB
   src[./src]
   build[./build]

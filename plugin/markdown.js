@@ -32,7 +32,11 @@ function plugin(options){
         if (!lang) return;
 
         if (lang === 'graph') {
-            return '<div class="mermaid">' + str + '</div>';
+            return '<pre class="graph"><div class="mermaid">' + str + '</div></pre>';
+        }
+        
+        if (lang === 'graph-center') {
+            return '<pre class="graph"><div class="mermaid" align="center">' + str + '</div></pre>';
         }
 
         if (hljs.getLanguage(lang)) {
