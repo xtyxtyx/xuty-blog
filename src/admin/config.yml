@@ -17,8 +17,8 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Layout", name: "layout", widget: "hidden", default: "post.pug"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text", required: false}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      # - {label: "Intro Blurb", name: "description", widget: "text", required: false}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Autodoc", name: "autodoc", widget: "boolean", default: true}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
