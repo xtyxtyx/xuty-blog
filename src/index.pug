@@ -85,10 +85,11 @@ html(lang='en')
                     //- Articles
                     div(class='container is-fluid')
                         each post in collections.posts
-                            div(class='blog-item')
-                                a(href= '/' + post.path)
-                                    p(class='title is-4') #{post.title}
-                                    p(class='subtitle is-6') #{post.date.toDateString()}
+                            if !post.hidden
+                                div(class='blog-item')
+                                    a(href= '/' + post.path)
+                                        p(class='title is-4') #{post.title}
+                                        p(class='subtitle is-6') #{post.date.toDateString()}
 
 
         //- Footer
